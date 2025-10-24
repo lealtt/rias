@@ -1,7 +1,11 @@
 import { EventEmitter } from "events";
 import { beforeAll, describe, expect, it, vi } from "vitest";
 import type { Client } from "discord.js";
-import { NodeSelectionStrategy, type NodeStats, RiasErrorCode } from "../types/index.js";
+import {
+  NodeSelectionStrategy,
+  type NodeStats,
+  RiasErrorCode,
+} from "../types/index.js";
 
 interface MockNode extends EventEmitter {
   id: string;
