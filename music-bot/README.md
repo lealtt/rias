@@ -271,4 +271,3 @@ For issues and questions about:
 - **Rias library**: Check the main repository
 - **This bot**: Open an issue in this repository
 - **Lavalink**: Visit [Lavalink documentation](https://lavalink.dev/)
-

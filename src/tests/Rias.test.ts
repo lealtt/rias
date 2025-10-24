@@ -1,7 +1,7 @@
 import { EventEmitter } from "events";
 import { beforeAll, describe, expect, it, vi } from "vitest";
 import type { Client } from "discord.js";
-import { NodeSelectionStrategy, type NodeStats, RiasErrorCode } from "../types";
+import { NodeSelectionStrategy, type NodeStats, RiasErrorCode } from "../types/index.js";
 
 interface MockNode extends EventEmitter {
   id: string;
@@ -61,8 +61,8 @@ let RiasCtor: new (
 ) => PrivateRias;
 
 beforeAll(async () => {
-  const module = await import("../Rias");
-  RiasCtor = module.Rias as typeof RiasCtor;
+  const module = await import("../Rias.js");
+  RiasCtor = module.Rias as unknown as typeof RiasCtor;
 });
 
 interface MockClient extends EventEmitter {

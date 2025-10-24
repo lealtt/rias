@@ -1,11 +1,11 @@
 import { EventEmitter } from "events";
 import { beforeEach, describe, expect, it, vi } from "vitest";
-import { Player } from "../Player";
-import type { Node } from "../Node";
-import type { RiasError } from "../types";
-import { RiasErrorCode } from "../types";
+import { Player } from "../Player.js";
+import type { Node } from "../Node.js";
+import type { RiasError } from "../types/index.js";
+import { RiasErrorCode } from "../types/index.js";
 
-class MockNode extends EventEmitter implements Partial<Node> {
+class MockNode extends EventEmitter {
   public id = "mock-node";
   public isReady = true;
   public updatePlayer = vi.fn();
@@ -18,7 +18,7 @@ describe("Player.connect", () => {
   beforeEach(() => {
     vi.restoreAllMocks();
     node = new MockNode();
-    player = new Player("12345678901234567", node as Node);
+    player = new Player("12345678901234567", node as unknown as Node);
   });
 
   it("throws a RiasError with INVALID_CHANNEL when channel ID is invalid", () => {

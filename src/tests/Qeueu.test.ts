@@ -1,6 +1,6 @@
 import { describe, it, expect, beforeEach } from "vitest";
-import { Queue, LoopMode } from "../Queue";
-import type { Track } from "../types";
+import { Queue, LoopMode } from "../Queue.js";
+import type { Track } from "../types/index.js";
 
 // Mock track factory
 function createMockTrack(

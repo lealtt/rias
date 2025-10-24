@@ -53,7 +53,7 @@ const originalFetch = globalThis.fetch;
 let NodeCtor: typeof Node;
 
 beforeAll(async () => {
-  NodeCtor = (await import("../Node")).Node;
+  NodeCtor = (await import("../Node.js")).Node;
 });
 
 beforeEach(() => {
